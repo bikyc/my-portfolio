@@ -1,0 +1,36 @@
+<section class="page-section skills-bg">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn left" (click)="prev()" [disabled]="centerIndex === 0">&#8592;</button>
+      <div class="carousel-cards">
+        <div
+          *ngFor="let skill of visibleSkills; let i = index"
+          class="skill-detail"
+          [ngClass]="{
+            'focused': i === focusOffset,
+            'side': i !== focusOffset
+          }"
+        >
+          <div class="skill-header">
+            <i [class]="skill.icon" [style.color]="skill.color" class="skill-icon"></i>
+            <span class="skill-name">{{ skill.name }}</span>
+          </div>
+          <ul class="skill-points">
+            <li *ngFor="let point of (i === focusOffset ? skill.points : [skill.points[0]])">
+              {{ point }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <button class="carousel-btn right" (click)="next()" >&#8594;</button>
+    </div>
+    <div class="carousel-indicators">
+      <span
+        *ngFor="let skill of skills; let i = index"
+        [class.active]="i === centerIndex"
+        (click)="goTo(i)">
+      </span>
+    </div>
+  </div>
+</section>

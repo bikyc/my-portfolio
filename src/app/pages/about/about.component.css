@@ -1,0 +1,78 @@
+.page-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    z-index: 1;
+    animation: moveBg 20s linear infinite alternate;
+    filter: brightness(0.4) blur(1.5px);
+}
+
+.about-content-row {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    width: 100%;
+    max-width: fit-content;
+}
+
+.about-me,
+.about-education {
+    flex: 1 1 0;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    min-width: 300px;
+}
+
+.about-me h2,
+.about-education h2,
+.about-me p,
+.about-education p {
+    color: white;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.about-me h2,
+.about-education h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.about-me p,
+.about-education p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .about-content-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

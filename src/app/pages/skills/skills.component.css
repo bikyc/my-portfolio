@@ -1,0 +1,147 @@
+.skills-bg {
+    min-height: 100vh;
+    background:
+        url('https://plus.unsplash.com/premium_photo-1678566111481-8e275550b700?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.carousel-btn {
+    background: #0078d4;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.7rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-btn:disabled {
+    background: #b0c4de;
+    cursor: not-allowed;
+}
+
+.carousel-cards {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-detail {
+    background: #fffbe6;
+    /* Light yellow */
+    color: #222;
+    /* Black text */
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(80, 120, 255, 0.10);
+    padding: 1.5rem 1rem 1rem 1rem;
+    transition: opacity 0.25s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.skill-detail .skill-name,
+.skill-detail .skill-points,
+.skill-detail .skill-header {
+    color: #222;
+    /* Ensure all text is black */
+}
+
+.skill-detail.focused {
+    transform: scale(1.12) translateY(-16px);
+    box-shadow: 0 12px 40px 0 rgba(80, 120, 255, 0.22);
+    opacity: 1;
+    filter: none;
+    z-index: 2;
+}
+
+.skill-detail.side {
+    transform: scale(0.92);
+    opacity: 0.6;
+    filter: blur(1px);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+}
+
+.skill-icon {
+    font-size: 2.2rem;
+    filter: drop-shadow(0 2px 8px #fff8);
+}
+
+.skill-name {
+    color: #222;
+    text-decoration: underline;
+
+}
+
+.skill-points {
+    margin: 0;
+    padding-left: 1.2rem;
+    color: #333;
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.skill-points li {
+    margin-bottom: 0.3rem;
+    font-size: 0.92rem;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.carousel-indicators span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #b0c4de;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.carousel-indicators span.active {
+    background: #0078d4;
+}

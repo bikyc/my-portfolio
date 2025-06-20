@@ -1,0 +1,29 @@
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+}
+
+.icon-link {
+  color: #4ea8de;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-link:hover {
+  color: #4361ee;
+  transform: scale(1.15);
+}
+
+.contact-title,
+.contact-desc {
+  text-align: center;
+  /* font-size: 2.5rem; */
+  color: #333;
+  margin-bottom: 1.5rem;
+}

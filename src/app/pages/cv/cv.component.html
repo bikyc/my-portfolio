@@ -1,0 +1,51 @@
+<section class="page-section">
+    <div class="cv-bg"></div>
+  <div class="cv-grid" style="grid-template-columns: 1.2fr 2fr;">
+    <!-- Left: General Details, Education, Skills with Descriptions -->
+    <div class="cv-left">
+      <h1>{{ name }}</h1>
+      <h2>{{ title }}</h2>
+      <p class="summary">{{ summary }}</p>
+      <div class="contact">
+        <div><strong>Email:</strong> {{ contact.email }}</div>
+        <div><strong>Phone:</strong> {{ contact.phone }}</div>
+        <div><strong>Location:</strong> {{ contact.location }}</div>
+        <div>
+          <strong>LinkedIn:</strong>
+          <a [href]="'https://' + contact.linkedin" target="_blank">{{ contact.linkedin }}</a>
+        </div>
+      </div>
+      <h3>Education</h3>
+      <div *ngFor="let edu of education" class="education">
+        <strong>{{ edu.degree }}</strong><br>
+        {{ edu.school }}<br>
+        <span class="period">{{ edu.period }}</span>
+      </div>
+      <h3>Skills & What I Did</h3>
+      <ul class="skills-list">
+        <li *ngFor="let skill of skills">
+          <strong>{{ skill.name }}</strong>
+          <ul>
+            <li *ngFor="let desc of skill.description">{{ desc }}</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right: Experience -->
+    <div class="cv-mid">
+      <h3>Experience</h3>
+      <div *ngFor="let job of experience" class="job">
+        <strong>{{ job.role }}</strong> - {{ job.company }}
+        <span class="period">({{ job.period }})</span>
+        <div class="job-skills">
+          <em>Skills: {{ job.skills.join(', ') }}</em>
+        </div>
+        <ul>
+          <li *ngFor="let detail of job.details">{{ detail }}</li>
+        </ul>
+      </div>
+      <button class="btn" (click)="downloadCV()">Download CV (PDF)</button>
+    </div>
+  </div>
+</section>
