@@ -1,11 +1,16 @@
-<!-- <app-navbar></app-navbar>
-<router-outlet></router-outlet>
-<app-footer></app-footer> -->
-<app-navbar></app-navbar>
-<section id="home"><app-home></app-home></section>
-<section id="about"><app-about></app-about></section>
-<section id="skills"><app-skills></app-skills></section>
-<section id="cv"><app-cv></app-cv></section>
-<section id="contact"><app-contact></app-contact></section>
+<app-left-nav></app-left-nav>
+<div class="main-content" [class.mobile-layout]="isMobile">
+  <section id="home" class="page-section"><app-home></app-home></section>
+  <section id="about" class="page-section"><app-about></app-about></section>
+  <section id="skills" class="page-section"><app-skills></app-skills></section>
+  <section id="cv" class="page-section"><app-cv></app-cv></section>
+  <section id="contact" class="page-section"><app-contact></app-contact></section>
+  <app-footer></app-footer>
+</div>
 
-<app-footer></app-footer>
+<!-- Floating Action Button for Mobile -->
+<div class="fab-container" *ngIf="isMobile">
+  <button class="fab" (click)="scrollToTop()" title="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</div>

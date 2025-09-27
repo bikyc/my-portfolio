@@ -1,0 +1,59 @@
+<div class="left-nav" [class.collapsed]="isCollapsed" [class.mobile-nav]="isMobile">
+  <div class="nav-toggle" (click)="toggleNav()">
+    <div class="hamburger" [class.active]="!isCollapsed">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  
+  <!-- Mobile overlay -->
+  <div class="mobile-overlay" *ngIf="isMobile && !isCollapsed" (click)="toggleNav()"></div>
+  
+  <div class="nav-content">
+    <div class="nav-header">
+      <div class="profile-section">
+        <div class="profile-avatar">
+          <div class="avatar-circle">
+            <span class="initials">BD</span>
+          </div>
+        </div>
+        <div class="profile-info" *ngIf="!isCollapsed">
+          <h3 class="profile-name">Bibek Dev</h3>
+          <p class="profile-title">Full Stack Developer</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="nav-menu">
+      <ul class="nav-list">
+        <li class="nav-item" *ngFor="let item of navItems">
+          <a 
+            href="#{{ item.id }}" 
+            class="nav-link" 
+            [class.active]="activeSection === item.id"
+            (click)="scrollToSection(item.id, $event)"
+          >
+            <i class="nav-icon" [class]="item.icon"></i>
+            <span class="nav-text" *ngIf="!isCollapsed">{{ item.label }}</span>
+            <div class="nav-indicator" *ngIf="activeSection === item.id"></div>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="nav-footer" *ngIf="!isCollapsed">
+      <div class="social-links">
+        <a href="#" class="social-link" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="social-link" title="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="social-link" title="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,10 @@ export class CvComponent {
   name = 'Bibek Chaudhary';
   title = 'Full Stack Developer';
   summary = `Passionate developer with expertise in building scalable web applications and modern user interfaces.`;
+  
+  get initials(): string {
+    return this.name.split(' ').map(n => n[0]).join('');
+  }
   contact = {
     email: 'bibek.cdy@email.com',
     phone: '+977 9804657508',

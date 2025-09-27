@@ -1,12 +1,45 @@
 <section class="home-hero">
   <div class="background-image"></div>
   <div class="overlay"></div>
+  <div class="floating-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
   <div class="container hero-content">
-    <h1>
-      Hi, I'm <span class="highlight">Bibek Chaudhary</span>
-    </h1>
-     <p class="subtitle">
-      <span class="typewriter">{{ displayText }}<span class="cursor">|</span></span>
-    </p>
+    <div class="hero-text animate-fadeInUp">
+      <h1>
+        Hi, I'm <span class="highlight">Bibek Chaudhary</span>
+      </h1>
+      <p class="subtitle">
+        <span class="typewriter">{{ displayText }}<span class="cursor">|</span></span>
+      </p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn-primary">Get to know me</a>
+        <a href="#contact" class="btn btn-outline">Let's connect</a>
+      </div>
+    </div>
+    <div class="hero-image animate-fadeInRight">
+      <div class="profile-card">
+        <div class="profile-avatar-large">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <span class="initials-large">BC</span>
+          </div>
+        </div>
+        <div class="tech-stack">
+          <div class="tech-item" *ngFor="let tech of techStack">
+            <i [class]="tech.icon"></i>
+            <span>{{ tech.name }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-arrow">
+      <i class="fas fa-chevron-down"></i>
+    </div>
   </div>
 </section>

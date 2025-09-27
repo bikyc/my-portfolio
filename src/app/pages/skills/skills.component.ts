@@ -5,6 +5,7 @@ interface Skill {
   icon: string;
   color: string;
   points: string[];
+  level: number;
 }
 
 @Component({
@@ -19,6 +20,7 @@ export class SkillsComponent implements OnInit {
       name: 'Angular',
       icon: 'fa-brands fa-angular',
       color: '#dd0031',
+      level: 90,
       points: [
         'Developed and maintained complex SPAs using Angular (v7 to v13)',
         'Implemented reactive forms, custom directives, and pipes',
@@ -31,6 +33,7 @@ export class SkillsComponent implements OnInit {
       name: '.NET Core',
       icon: 'fa-solid fa-code',
       color: '#512bd4',
+      level: 85,
       points: [
         'Built scalable RESTful APIs using ASP.NET Core (3.1 to 6)',
         'Implemented clean architecture with layered services and repositories',
@@ -43,6 +46,7 @@ export class SkillsComponent implements OnInit {
       name: 'SQL',
       icon: 'fa-solid fa-database',
       color: '#00758f',
+      level: 80,
       points: [
         'Designed normalized and denormalized schemas for analytics',
         'Wrote optimized joins, views, CTEs, and stored procedures',
@@ -54,6 +58,7 @@ export class SkillsComponent implements OnInit {
       name: 'JavaScript',
       icon: 'fa-brands fa-js',
       color: '#f7df1e',
+      level: 88,
       points: [
         'Used ES6+ features to write clean, modular JavaScript',
         'Built reusable utility libraries and helper functions',
@@ -65,6 +70,7 @@ export class SkillsComponent implements OnInit {
       name: 'HTML5',
       icon: 'fa-brands fa-html5',
       color: '#e34c26',
+      level: 92,
       points: [
         'Used semantic HTML for better SEO and accessibility',
         'Integrated HTML APIs like Canvas, Drag and Drop, and Audio',
@@ -75,6 +81,7 @@ export class SkillsComponent implements OnInit {
       name: 'CSS3',
       icon: 'fa-brands fa-css3-alt',
       color: '#1572b6',
+      level: 90,
       points: [
         'Designed UIs using Flexbox, Grid, and CSS Variables',
         'Created animated effects using keyframes and transitions',
@@ -86,6 +93,7 @@ export class SkillsComponent implements OnInit {
       name: 'TypeScript',
       icon: 'fa-solid fa-code',
       color: '#3178c6',
+      level: 85,
       points: [
         'Developed strongly-typed Angular applications for safety and scalability',
         'Created custom interfaces, types, enums, generics, and type guards',
@@ -96,6 +104,7 @@ export class SkillsComponent implements OnInit {
       name: 'Git',
       icon: 'fa-brands fa-git-alt',
       color: '#f34f29',
+      level: 82,
       points: [
         'Collaborated via Git with GitHub, GitLab, and Azure Repos',
         'Used feature branching, rebasing, and conflict resolution strategies',
@@ -107,6 +116,7 @@ export class SkillsComponent implements OnInit {
       name: 'Azure',
       icon: 'fa-brands fa-microsoft',
       color: '#0078d4',
+      level: 75,
       points: [
         'Deployed Angular + .NET apps on Azure App Service and Azure VMs',
         'Configured Azure DevOps for CI/CD pipelines with test/stage/prod',
@@ -146,5 +156,13 @@ next() {
 }
   goTo(idx: number) {
     this.centerIndex = idx;
+  }
+
+  onSkillHover(skill: Skill) {
+    // Add hover effects if needed
+  }
+
+  onSkillLeave() {
+    // Remove hover effects if needed
   }
 }

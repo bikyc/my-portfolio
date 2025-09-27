@@ -1,36 +1,84 @@
-<section class="page-section skills-bg">
-  <div class="container">
-    <h2>Skills</h2>
-    <div class="carousel-wrapper">
-      <button class="carousel-btn left" (click)="prev()" [disabled]="centerIndex === 0">&#8592;</button>
-      <div class="carousel-cards">
-        <div
-          *ngFor="let skill of visibleSkills; let i = index"
-          class="skill-detail"
-          [ngClass]="{
-            'focused': i === focusOffset,
-            'side': i !== focusOffset
-          }"
-        >
-          <div class="skill-header">
+<section class="page-section skills-section">
+  <div class="skills-background">
+    <div class="floating-elements">
+      <div class="floating-element element-1"></div>
+      <div class="floating-element element-2"></div>
+      <div class="floating-element element-3"></div>
+    </div>
+  </div>
+  
+  <div class="skills-container">
+    <div class="skills-header animate-fadeInUp">
+      <h2 class="section-title">My Skills & Expertise</h2>
+      <p class="section-subtitle">Technologies I work with to create amazing digital experiences</p>
+    </div>
+
+    <div class="skills-grid">
+      <div 
+        *ngFor="let skill of skills; let i = index" 
+        class="skill-card animate-fadeInUp"
+        [style.animation-delay]="(i * 0.1) + 's'"
+        (mouseenter)="onSkillHover(skill)"
+        (mouseleave)="onSkillLeave()"
+      >
+        <div class="skill-card-inner">
+          <div class="skill-icon-wrapper">
             <i [class]="skill.icon" [style.color]="skill.color" class="skill-icon"></i>
-            <span class="skill-name">{{ skill.name }}</span>
+            <div class="skill-icon-bg" [style.background-color]="skill.color + '20'"></div>
           </div>
-          <ul class="skill-points">
-            <li *ngFor="let point of (i === focusOffset ? skill.points : [skill.points[0]])">
-              {{ point }}
-            </li>
-          </ul>
+          <div class="skill-content">
+            <h3 class="skill-name">{{ skill.name }}</h3>
+            <div class="skill-level">
+              <div class="skill-progress">
+                <div class="skill-progress-bar" [style.width.%]="skill.level" [style.background-color]="skill.color"></div>
+              </div>
+              <span class="skill-percentage">{{ skill.level }}%</span>
+            </div>
+            <ul class="skill-points">
+              <li *ngFor="let point of skill.points">{{ point }}</li>
+            </ul>
+          </div>
         </div>
       </div>
-      <button class="carousel-btn right" (click)="next()" >&#8594;</button>
     </div>
-    <div class="carousel-indicators">
-      <span
-        *ngFor="let skill of skills; let i = index"
-        [class.active]="i === centerIndex"
-        (click)="goTo(i)">
-      </span>
+
+    <div class="skills-categories">
+      <div class="category-section animate-fadeInLeft">
+        <h3>Frontend Development</h3>
+        <div class="tech-tags">
+          <span class="tech-tag">Angular</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">Sass</span>
+        </div>
+      </div>
+      
+      <div class="category-section animate-fadeInRight">
+        <h3>Backend Development</h3>
+        <div class="tech-tags">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">.NET Core</span>
+          <span class="tech-tag">C#</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Express.js</span>
+          <span class="tech-tag">REST APIs</span>
+        </div>
+      </div>
+      
+      <div class="category-section animate-fadeInLeft">
+        <h3>Database & Tools</h3>
+        <div class="tech-tags">
+          <span class="tech-tag">SQL Server</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Git</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">AWS</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>

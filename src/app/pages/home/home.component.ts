@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+interface TechStack {
+  name: string;
+  icon: string;
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,12 +14,23 @@ export class HomeComponent implements OnInit {
   roles: string[] = [
     'Frontend Developer',
     'Backend Developer',
-    'Full Stack Developer'
+    'Full Stack Developer',
+    'UI/UX Enthusiast',
+    'Problem Solver'
   ];
   displayText: string = '';
   private roleIndex = 0;
   private charIndex = 0;
   private typing = true;
+
+  techStack: TechStack[] = [
+    { name: 'Angular', icon: 'fab fa-angular' },
+    { name: 'React', icon: 'fab fa-react' },
+    { name: 'Node.js', icon: 'fab fa-node-js' },
+    { name: 'Python', icon: 'fab fa-python' },
+    { name: 'TypeScript', icon: 'fab fa-js-square' },
+    { name: 'MongoDB', icon: 'fas fa-database' }
+  ];
 
   ngOnInit(): void {
     this.typeWriterEffect();
