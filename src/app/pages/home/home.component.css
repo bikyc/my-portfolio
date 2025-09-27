@@ -1,7 +1,7 @@
 /* Modern Home Hero Styles */
 .home-hero {
   position: relative;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,7 +98,7 @@
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
-  padding: 0 2rem;
+  padding: 4rem 2rem;
   gap: 4rem;
 }
 

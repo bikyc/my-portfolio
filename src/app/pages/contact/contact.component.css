@@ -1,12 +1,12 @@
 /* Modern Contact Section Styles */
 .contact-section {
   position: relative;
-  min-height: 100vh;
+  height: 100%;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 4rem 0;
+  padding: 0;
 }
 
 .contact-background {
@@ -74,7 +74,7 @@
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 4rem 2rem;
 }
 
 .contact-header {

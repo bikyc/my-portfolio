@@ -129,7 +129,13 @@ export class SkillsComponent implements OnInit {
 
   centerIndex = 1;
   visibleCount = 3;
+  cardWidth = 400; // Width of each card in pixels, adjustable for responsiveness
+
   get focusOffset() { return Math.floor(this.visibleCount / 2); }
+
+  get translateValue(): string {
+    return `-${this.centerIndex * this.cardWidth}px`;
+  }
 
   get visibleSkills(): Skill[] {
     const start = Math.max(0, this.centerIndex - this.focusOffset);

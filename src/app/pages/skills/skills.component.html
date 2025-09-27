@@ -14,31 +14,44 @@
     </div>
 
     <div class="skills-grid">
-      <div 
-        *ngFor="let skill of skills; let i = index" 
-        class="skill-card animate-fadeInUp"
-        [style.animation-delay]="(i * 0.1) + 's'"
-        (mouseenter)="onSkillHover(skill)"
-        (mouseleave)="onSkillLeave()"
-      >
-        <div class="skill-card-inner">
-          <div class="skill-icon-wrapper">
-            <i [class]="skill.icon" [style.color]="skill.color" class="skill-icon"></i>
-            <div class="skill-icon-bg" [style.background-color]="skill.color + '20'"></div>
-          </div>
-          <div class="skill-content">
-            <h3 class="skill-name">{{ skill.name }}</h3>
-            <div class="skill-level">
-              <div class="skill-progress">
-                <div class="skill-progress-bar" [style.width.%]="skill.level" [style.background-color]="skill.color"></div>
+      <div class="skills-carousel-wrapper">
+        <div class="skills-carousel-track" [style.transform]="'translateX(' + translateValue + ')'">
+          <div 
+            *ngFor="let skill of skills; let i = index" 
+            class="skill-card animate-fadeInUp"
+            [style.animation-delay]="(i * 0.1) + 's'"
+            [style.width.px]="cardWidth"
+            (mouseenter)="onSkillHover(skill)"
+            (mouseleave)="onSkillLeave()"
+          >
+            <div class="skill-card-inner">
+              <div class="skill-icon-wrapper">
+                <i [class]="skill.icon" [style.color]="skill.color" class="skill-icon"></i>
+                <div class="skill-icon-bg" [style.background-color]="skill.color + '20'"></div>
               </div>
-              <span class="skill-percentage">{{ skill.level }}%</span>
+              <div class="skill-content">
+                <h3 class="skill-name">{{ skill.name }}</h3>
+                <div class="skill-level">
+                  <div class="skill-progress">
+                    <div class="skill-progress-bar" [style.width.%]="skill.level" [style.background-color]="skill.color"></div>
+                  </div>
+                  <span class="skill-percentage">{{ skill.level }}%</span>
+                </div>
+                <ul class="skill-points">
+                  <li *ngFor="let point of skill.points">{{ point }}</li>
+                </ul>
+              </div>
             </div>
-            <ul class="skill-points">
-              <li *ngFor="let point of skill.points">{{ point }}</li>
-            </ul>
           </div>
         </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="nav-btn prev" (click)="prev()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-btn next" (click)="next()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     </div>
 
@@ -47,23 +60,18 @@
         <h3>Frontend Development</h3>
         <div class="tech-tags">
           <span class="tech-tag">Angular</span>
-          <span class="tech-tag">React</span>
           <span class="tech-tag">TypeScript</span>
           <span class="tech-tag">JavaScript</span>
           <span class="tech-tag">HTML5</span>
           <span class="tech-tag">CSS3</span>
-          <span class="tech-tag">Sass</span>
         </div>
       </div>
       
       <div class="category-section animate-fadeInRight">
         <h3>Backend Development</h3>
         <div class="tech-tags">
-          <span class="tech-tag">Node.js</span>
           <span class="tech-tag">.NET Core</span>
           <span class="tech-tag">C#</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Express.js</span>
           <span class="tech-tag">REST APIs</span>
         </div>
       </div>
@@ -72,11 +80,9 @@
         <h3>Database & Tools</h3>
         <div class="tech-tags">
           <span class="tech-tag">SQL Server</span>
-          <span class="tech-tag">MongoDB</span>
           <span class="tech-tag">MySQL</span>
           <span class="tech-tag">Git</span>
           <span class="tech-tag">Docker</span>
-          <span class="tech-tag">AWS</span>
         </div>
       </div>
     </div>

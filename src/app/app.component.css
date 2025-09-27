@@ -12,10 +12,11 @@
 
 .page-section {
   min-height: 100vh;
-  padding: 0;
+  padding: 0 !important;
   position: relative;
   scroll-behavior: smooth;
   transition: all 0.3s ease;
+  display: block !important;
 }
 
 /* Enhanced scroll animations */
