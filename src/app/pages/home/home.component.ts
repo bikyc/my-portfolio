@@ -23,14 +23,14 @@ export class HomeComponent implements OnInit {
   private charIndex = 0;
   private typing = true;
 
-  techStack: TechStack[] = [
-    { name: 'Angular', icon: 'fab fa-angular' },
-    { name: 'React', icon: 'fab fa-react' },
-    { name: 'Node.js', icon: 'fab fa-node-js' },
-    { name: 'Python', icon: 'fab fa-python' },
-    { name: 'TypeScript', icon: 'fab fa-js-square' },
-    { name: 'MongoDB', icon: 'fas fa-database' }
-  ];
+ techStack: TechStack[] = [
+  { name: 'Angular', icon: 'fab fa-angular' },        // Angular official brand icon
+  { name: 'SQL Server', icon: 'fas fa-server' },     // Use server icon for SQL Server
+  { name: 'C#', icon: 'fas fa-code' },               // C# has no official icon, using code icon
+  { name: 'HTML', icon: 'fab fa-html5' },            // HTML5 official icon
+  { name: 'CSS', icon: 'fab fa-css3-alt' }           // CSS3 official icon
+];
+
 
   ngOnInit(): void {
     this.typeWriterEffect();

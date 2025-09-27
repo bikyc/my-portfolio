@@ -208,8 +208,8 @@
 }
 
 .avatar-ring {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   background: linear-gradient(45deg, #00e6e6, #0072ff);
   position: absolute;
@@ -220,8 +220,8 @@
 }
 
 .avatar-inner {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
@@ -232,9 +232,16 @@
   margin: 0 auto;
 }
 
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .initials-large {
   color: white;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
 }
 
