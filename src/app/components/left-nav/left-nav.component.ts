@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 
 interface NavItem {
   id: string;
@@ -12,6 +12,8 @@ interface NavItem {
   styleUrls: ['./left-nav.component.css']
 })
 export class LeftNavComponent implements OnInit {
+  @Output() collapsedChange = new EventEmitter<boolean>();
+
   isCollapsed: boolean = false;
   activeSection: string = 'home';
   isMobile: boolean = false;
@@ -55,12 +57,16 @@ export class LeftNavComponent implements OnInit {
   private checkScreenSize() {
     this.isMobile = window.innerWidth < 768;
     if (this.isMobile) {
-      this.isCollapsed = true;
+      if (!this.isCollapsed) {
+        this.isCollapsed = true;
+        this.collapsedChange.emit(this.isCollapsed);
+      }
     }
   }
 
   toggleNav() {
     this.isCollapsed = !this.isCollapsed;
+    this.collapsedChange.emit(this.isCollapsed);
   }
 
   scrollToSection(sectionId: string, event: Event) {

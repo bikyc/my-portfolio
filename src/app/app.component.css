@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.main-content.nav-collapsed {
+  margin-left: 70px;
+}
+
 .main-content.mobile-layout {
   margin-left: 0;
 }

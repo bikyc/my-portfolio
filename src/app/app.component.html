@@ -1,5 +1,9 @@
-<app-left-nav></app-left-nav>
-<div class="main-content" [class.mobile-layout]="isMobile">
+<app-left-nav (collapsedChange)="onNavCollapsedChange($event)"></app-left-nav>
+<div
+  class="main-content"
+  [class.mobile-layout]="isMobile"
+  [class.nav-collapsed]="isNavCollapsed"
+>
   <section id="home" class="page-section"><app-home></app-home></section>
   <section id="about" class="page-section"><app-about></app-about></section>
   <section id="skills" class="page-section"><app-skills></app-skills></section>
