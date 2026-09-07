@@ -8,6 +8,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'my-portfolio';
   isMobile: boolean = false;
+  isNavCollapsed: boolean = false;
 
   ngOnInit() {
     this.checkScreenSize();
@@ -20,6 +21,10 @@ export class AppComponent implements OnInit {
 
   private checkScreenSize() {
     this.isMobile = window.innerWidth < 768;
+  }
+
+  onNavCollapsedChange(isCollapsed: boolean) {
+    this.isNavCollapsed = isCollapsed;
   }
 
   scrollToTop() {
